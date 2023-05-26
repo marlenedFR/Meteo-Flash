@@ -1,7 +1,9 @@
 import React from "react";
+import "./Grid.css";
 import Title from "../Title/Title";
 import Logo from "../Logo/Logo";
-import "./Grid.css";
+import City from "../City/City";
+import Weather from "../Weather/Weather";
 
 function Grid() {
   return (
@@ -11,8 +13,8 @@ function Grid() {
         <Logo />
       </div>
       <div className="bottom-row">
-        {/* <Square /> */}
-        {/* <Square /> */}
+        <City />
+        <Weather />
       </div>
     </div>
   );

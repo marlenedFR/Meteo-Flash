@@ -1,6 +1,18 @@
-.title-container {
+    .grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .top-row,
+  .bottom-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .title-container {
     padding: 5%;
-    margin: 2%;
+    margin: 5%;
     width: 200px;
     height: 200px;
     border: 1px solid black;
@@ -11,7 +23,7 @@
 
   .logo-container {
     padding: 5%;
-    margin: 2%;
+    margin: 5%;
     width: 200px;
     height: 200px;
     border: 1px solid red;
@@ -26,16 +38,34 @@
     height: 100%;
     object-fit: contain;
   }
-  
-  .grid {
+
+  .city-container {
+    padding: 5%;
+    margin: 5%;
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
   
-  .top-row,
-  .bottom-row {
+  .city-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(4);
+  }
+
+  .weather-container {
+    padding: 5%;
+    margin: 5%;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
   }
   
