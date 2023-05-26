@@ -1,71 +1,90 @@
-    .grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .top-row,
-  .bottom-row {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .title-container {
-    padding: 5%;
-    margin: 5%;
-    width: 200px;
-    height: 200px;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.grid {
+  padding: 1%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 3px;
+  box-shadow: 5px 5px 8px rgba(27, 1, 100, 0.575);   
+}
 
-  .logo-container {
-    padding: 5%;
-    margin: 5%;
-    width: 200px;
-    height: 200px;
-    border: 1px solid red;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .logo-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
+.top-row,
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+}
 
-  .city-container {
-    padding: 5%;
-    margin: 5%;
-    width: 200px;
-    height: 200px;
-    border: 1px solid red;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .city-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transform: scale(4);
-  }
+.title-container,
+.logo-container,
+.city-container,
+.weather-container {
+  padding: 2%;
+  margin: 3%;
+  width: 200px;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .weather-container {
-    padding: 5%;
-    margin: 5%;
-    width: 200px;
-    height: 200px;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+.logo-container,
+.city-container {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.logo-container {
+  background-color: #FFF5E5;
+  border-radius: 16px;
+  box-shadow: 3px 3px 5px rgba(172, 172, 172, 0.575);   
+
+}
+
+.logo-image,
+.city-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.city-image {
+  transform: scale(3);
+}
+
+.title-container {
+  position: relative;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #333;
+  text-align: center;
+  padding: 10px;
+}
+
+.title-container::before,
+.title-container::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 95px;
+  height: 8px;
+  background-color: #333;
+  transform: translateX(-50%);
+}
+
+.title-container::before {
+  top: calc(70% - 4px);
+  left: 60%;
+}
+
+.title-container::after {
+  top: calc(25% + 5px);
+  left: 46%;
+}
+
+
+
+
+
+
