@@ -1,0 +1,41 @@
+.title-container {
+    padding: 5%;
+    margin: 2%;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-container {
+    padding: 5%;
+    margin: 2%;
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .top-row,
+  .bottom-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
