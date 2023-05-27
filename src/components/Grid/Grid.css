@@ -41,9 +41,9 @@
 }
 
 .logo-container {
-  background-color: #FFF5E5;
+  /* background-color: #FFF5E5; */
   border-radius: 16px;
-  box-shadow: 3px 3px 5px rgba(172, 172, 172, 0.575);   
+  /* box-shadow: 3px 3px 5px rgba(172, 172, 172, 0.575);    */
 }
 
 .logo-image,
