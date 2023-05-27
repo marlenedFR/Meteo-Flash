@@ -1,0 +1,25 @@
+.ui.icon.input {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  margin: 1.5em;
+  font-size: 1.3em;
+  width: 100%;
+  position: relative;
+}
+
+.ui.icon.input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+
+.ui.icon.input i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-40%);
+  cursor: pointer;
+  color: #2a4480;
+}
