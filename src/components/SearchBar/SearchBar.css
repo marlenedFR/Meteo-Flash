@@ -18,8 +18,12 @@
 .ui.icon.input i {
   position: absolute;
   right: 10px;
-  top: 50%;
-  transform: translateY(-40%);
+  top: 40%;
+  transform: translateY(-60%);
   cursor: pointer;
+  opacity: 50%;
+}
+
+.ui.icon.input i:hover {
   color: #2a4480;
 }
