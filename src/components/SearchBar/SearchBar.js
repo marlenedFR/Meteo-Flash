@@ -32,6 +32,7 @@ function SearchBar({ onSearch }) {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          id="searchbar"
           placeholder="Rechercher une ville..."
           onChange={handleInputChange} // Appelle la fonction pour gérer les changements de saisie
         />

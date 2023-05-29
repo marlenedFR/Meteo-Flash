@@ -27,7 +27,6 @@
   flex: 1;
   border: none;
   outline: none;
-  padding: 5px;
 }
 
 .ui.icon.input input::placeholder {
@@ -37,11 +36,11 @@
 
 .ui.icon.input i {
   position: absolute;
-  right: 10px;
+  right: 0.71em;
   top: 40%;
   transform: translateY(-60%);
   cursor: pointer;
-  opacity: 50%;
+  opacity: 30%;
 }
 
 .ui.icon.input i:hover {

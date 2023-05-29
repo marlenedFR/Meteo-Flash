@@ -1,9 +1,9 @@
 .title-container {
     position: relative;
-    font-size: 20px;
+    font-size: 1.36em;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.12em;
     color: #333;
     text-align: center;
   }
@@ -13,19 +13,19 @@
     content: "";
     position: absolute;
     left: 50%;
-    width: 150px;
-    height: 8px;
+    width: 8em;
+    height: 0.48em;
     background-color: #333;
     transform: translateX(-50%);
   }
   
   .title-container::before {
-    top: calc(70% - 15px);
+    top: calc(70% - 0.8em);
     left: 60%;
   }
   
   .title-container::after {
-    top: calc(25% + 15px);
+    top: calc(25% + 0.8em);
     left: 46%;
   }
   

@@ -2,14 +2,14 @@
     text-align: center;
     margin-top: 20%;
     margin-bottom: 10%;
-    font-size: 11px;
+    font-size: 0.78em;
     color: #404379;
     /* font-weight: bold; */
 }
 
 .footer-container p .icon {
-    margin: 4px;
-    font-size: 17px;
+    margin: 0.28em;
+    font-size: 1.50em;
 }
 
 .footer-links {
@@ -21,7 +21,7 @@
 }
 
 .footer-container .heart.icon {
-    font-size: 12px;
+    font-size: 1em;
     transition: transform 0.3s, color 0.3s;
   }
   
@@ -38,8 +38,9 @@
       transform: scale(1);
     }
     50% {
-      transform: scale(1.2);
+      transform: scale(2);
       color: pink;
+      z-index: 1;
     }
     100% {
       transform: scale(1);

@@ -34,9 +34,9 @@ function Grid() {
       </div>
       <div className="grid-city-container">
         <City cityPhoto={cityPhoto} />
-      </div>
-      <div className="weather-city-container">
-        <Weather cities={cities} />      
+        <div className="weather-city-container">
+          <Weather cities={cities} /> 
+        </div>
       </div>
       <div className="footer-row">
         <Footer />
