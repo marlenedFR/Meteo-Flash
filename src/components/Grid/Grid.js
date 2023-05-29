@@ -6,7 +6,6 @@ import SearchBar from "../SearchBar/SearchBar";
 
 import "./Grid.css";
 import { fetchCityPhoto } from "../../api/unsplash";
-// import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Title from "../Title/Title";
 import Logo from "../Logo/Logo";

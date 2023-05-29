@@ -1,5 +1,4 @@
 import React from "react";
-import "./Logo.css";
 import logo from "../../assets/images/logo.png";
 
 function Logo() {
