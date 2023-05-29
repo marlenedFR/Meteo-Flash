@@ -7,6 +7,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import "./Grid.css";
 import { fetchCityPhoto } from "../../api/unsplash";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 function Grid() {
   const [cities, setCityWeather] = useState([]);
@@ -38,6 +39,9 @@ function Grid() {
           <Weather cities={cities} />      
         </div>
       ) : null}
+      <div className="footer-row">
+        <Footer />
+      </div>
     </div>
   );
 }
