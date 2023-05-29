@@ -3,16 +3,36 @@
   align-items: center;
   border-bottom: 1px solid #ddd;
   margin: 1.5em;
-  font-size: 1.3em;
+  font-size: 1em;
   width: 100%;
   position: relative;
+  transition: all .14s ease-out;
 }
+
+.ui.icon.input:hover:not([disabled]) {
+  box-shadow: 0px 3px 0px #000000;
+  /* border: 1.5px solid #141414 !important; */
+  /* transform: translate(-1px,-1px); */
+
+}
+
+/* style button : transition: all .14s ease-out;
+.buttonblack:hover:not([disabled]) {
+  box-shadow: 4px 4px 0px #000000;
+  border: 1.5px solid #141414 !important;
+  transform: translate(-4px,-4px);
+  color: #141414 !important; */
 
 .ui.icon.input input {
   flex: 1;
   border: none;
   outline: none;
   padding: 5px;
+}
+
+.ui.icon.input input::placeholder {
+  font-style: italic;
+  color: #c5c3c3;
 }
 
 .ui.icon.input i {
@@ -25,5 +45,5 @@
 }
 
 .ui.icon.input i:hover {
-  color: #2a4480;
+  color: #000000;
 }

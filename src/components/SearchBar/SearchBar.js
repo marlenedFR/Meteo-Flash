@@ -21,7 +21,6 @@ function SearchBar({ onSearch }) {
     performSearch();
   };
 
-
   const performSearch = async () => {
     const filteredCities = await fetchCities(searchText);
     onSearch(filteredCities);
@@ -32,7 +31,7 @@ function SearchBar({ onSearch }) {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Rechercher une ville, un pays..."
+          placeholder="Rechercher une ville..."
           onChange={handleInputChange}
         />
         <i
