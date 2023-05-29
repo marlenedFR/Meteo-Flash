@@ -6,9 +6,15 @@ function Footer() {
     <div className="footer-container">
       Made with <i className="heart outline icon"></i>by me
       <p>
-        <i className="linkedin icon"></i>
-        <i className="twitter square icon"></i>
-        <i className="github square icon"></i>
+        <a href="https://www.linkedin.com/in/marlenedfr/" className="footer-links" target="_blank" rel="noopener noreferrer">
+          <i className="linkedin icon"></i>
+        </a>
+        <a href="https://twitter.com/marlened_fr" className="footer-links" target="_blank" rel="noopener noreferrer">
+          <i className="twitter square icon"></i>
+        </a>
+        <a href="https://github.com/marlenedFR" className="footer-links" target="_blank" rel="noopener noreferrer">
+          <i className="github square icon"></i>
+        </a>
       </p>
     </div>
   );

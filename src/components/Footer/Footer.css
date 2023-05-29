@@ -2,13 +2,47 @@
     text-align: center;
     margin-top: 20%;
     margin-bottom: 10%;
-    font-size: 12px;
-    color: #23003bab;
-    font-weight: bold;
+    font-size: 11px;
+    color: #404379;
+    /* font-weight: bold; */
 }
 
 .footer-container p .icon {
-    margin-top: 5px;
-    margin: 3px;
-    font-size: 20px;
+    margin: 4px;
+    font-size: 17px;
 }
+
+.footer-links {
+    color: #404379;
+}
+
+.footer-links:hover {
+    color: #6B426B;
+}
+
+.footer-container .heart.icon {
+    font-size: 12px;
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  .footer-container .heart.icon:hover {
+    animation-name: heartbeat;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    color: red;
+  }
+  
+  @keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+      color: pink;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  

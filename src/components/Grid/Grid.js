@@ -22,7 +22,6 @@ function Grid() {
       setCityPhoto(photo);
     }
     setHasSearched(true);
-
   };
 
   return (
