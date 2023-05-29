@@ -1,0 +1,32 @@
+.title-container {
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #333;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .title-container::before,
+  .title-container::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 95px;
+    height: 8px;
+    background-color: #333;
+    transform: translateX(-50%);
+  }
+  
+  .title-container::before {
+    top: calc(70% - 4px);
+    left: 60%;
+  }
+  
+  .title-container::after {
+    top: calc(25% + 5px);
+    left: 46%;
+  }
+  
