@@ -1,12 +1,28 @@
+// import city from "../../assets/images/quentin-gTuRT6HVFsg-unsplash.jpg";
 import React from "react";
-import city from "../../assets/images/quentin-gTuRT6HVFsg-unsplash.jpg";
+import PropTypes from "prop-types";
 
-function City() {
+function City({ cityPhoto }) {
+
   return (
     <div className="city-container">
-      <img className="city-image" src={city} alt="City" />
+      {cityPhoto ? (
+        <div className="city-image">
+          <img src={cityPhoto.imageUrl} alt="City" />
+          <p>Photographer: {cityPhoto.photographer}</p>
+        </div>
+      ) : (
+        <p>Aucune photo trouvée</p>
+      )}
     </div>
   );
 }
+
+City.propTypes = {
+  cityPhoto: PropTypes.shape({
+    imageUrl: PropTypes.string.isRequired,
+    photographer: PropTypes.string.isRequired,
+  }),
+};
 
 export default City;
