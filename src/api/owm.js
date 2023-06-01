@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const fetchCities = async (searchText) => {
   try {
 
@@ -5,13 +7,14 @@ export const fetchCities = async (searchText) => {
     
     // const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${searchText}&appid={f336b2b992d1b7775aae32ac811b5a5e}`);
 
-    const response = await fetch(`https://api.weatherbit.io/v2.0/current?city=${searchText}&key=93fa85820eda4216992259143ab33a69`);
+    const response = await axios.get(`https://api.weatherbit.io/v2.0/current?city=${searchText}&key=93fa85820eda4216992259143ab33a69`);
     
-    if (!response.ok) {
+    if (response.status != 200) {
       throw new Error("Une erreur s'est produite lors de la recherche des villes.");
     }
 
-    const data = await response.json();
+    const data = await response.data;
+    console.log(data);
     if (!Array.isArray(data.data)) {
       throw new Error("Les données renvoyées par l'API ne sont pas valides.");
     }
