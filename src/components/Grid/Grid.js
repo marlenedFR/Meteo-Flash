@@ -9,11 +9,12 @@ import { fetchCityPhoto } from "../../api/unsplash";
 import Footer from "../Footer/Footer";
 import Title from "../Title/Title";
 import Logo from "../Logo/Logo";
-import { fetchCities } from "../../api/owm";
+import { fetchCities } from "../../api/weatherbit";
 
 function Grid() {
   const [cities, setCityWeather] = useState([]);
   const [cityPhoto, setCityPhoto] = useState(null);
+  
 
   const handleSearch = async (filteredCities) => {
     const cityResults = await fetchCities(filteredCities[0].name);

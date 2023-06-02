@@ -7,9 +7,9 @@ function Weather({ cities }) {
     <div className="weather-container">
       {cities.map((city, index) => (
         <div key={index}>
-          <h2>Ville : {city.name}</h2>
+          <h3>Ville : {city.name}</h3>
           <p>Température : {city.temperature} °</p>
-          <p>Clouds : {city.clouds}</p>
+          {/* Afficher le vent */}
         </div>
       ))}
     </div>
@@ -21,7 +21,6 @@ Weather.propTypes = {
     PropTypes.shape({
       name: PropTypes.string,
       temperature: PropTypes.number,
-      clouds: PropTypes.number,
     })
   ).isRequired,
 };

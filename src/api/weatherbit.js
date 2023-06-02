@@ -15,7 +15,7 @@ export const fetchCities = async (searchText) => {
       return {
         name: item.city_name,
         temperature: item.temp,
-        clouds: item.clouds,
+        weatherIcon: item.weather.icon,
       };
     });
     return cities;

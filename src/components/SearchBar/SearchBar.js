@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./SearchBar.css";
-import { fetchCities } from "../../api/owm";
+import { fetchCities } from "../../api/weatherbit";
 import { fetchCityPhoto } from "../../api/unsplash";
 import { fetchCityName } from "../../api/geonames";
 
