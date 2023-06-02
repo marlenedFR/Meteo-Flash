@@ -1,46 +1,119 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./SearchBar.css";
 import { fetchCities } from "../../api/owm";
 import { fetchCityPhoto } from "../../api/unsplash";
+import { fetchCityName } from "../../api/geonames";
 
 function SearchBar({ onSearch }) {
+  const [citySuggestions, setCitySuggestions] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  const [highlightedIndex, setHighlightedIndex] = useState(-1);
 
-  const [searchText, setSearchText] = useState("");  // État (state) pour stocker le texte de recherche saisi par l'utilisateur
+  const handleInputChange = async (e) => {
+    const value = e.target.value;
+    setSearchText(value);
 
-  const handleInputChange = (e) => {
-    setSearchText(e.target.value); // Met à jour l'état (state) avec la valeur saisie par l'utilisateur à chaque changement de saisie
+    if (value !== "") {
+      const cityResults = await fetchCityName(value);
+      setCitySuggestions(cityResults);
+      setHighlightedIndex(-1); // Réinitialiser l'index de mise en évidence
+    } else {
+      setCitySuggestions([]);
+    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Empêche le rechargement de la page
-    performSearch(); // Appelle la fonction "performSearch" plus bas pour effectuer la recherche
+  const handleCitySelect = async (city) => {
+    console.log("Ville sélectionnée :", city);
+    setSearchText(city.name + ", " + city.country);
+
+    const cityResults = await fetchCities(city.name);
+    const photoResults = await fetchCityPhoto(city.name, city.country);
+    onSearch([city], cityResults, photoResults);
+
+    setCitySuggestions([]); // Masquer la liste déroulante
   };
 
-  const handleIconClick = () => {
-    performSearch(); // Appelle la fonction "performSearch" plus bas pour effectuer la recherche
+  const handleSearchFieldClick = () => {
+    setSearchText(""); // Effacer le texte de recherche actuel
   };
 
-  const performSearch = async () => {
-    const cityResults = await fetchCities(searchText); // Effectue la recherche des villes correspondant au texte de recherche. La fonction "fetchCities" se trouve dans l'API owm.js
-    const photoResults = await fetchCityPhoto(searchText); // Appel à la deuxième API pour récupérer les photos correspondantes
-    onSearch(cityResults, photoResults); // Appelle la fonction de recherche avec les villes filtrées comme argument
+  const handleKeyDown = (e) => {
+    if (e.key === "ArrowUp") {
+      e.preventDefault();
+      highlightPreviousCity();
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault();
+      highlightNextCity();
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      selectHighlightedCity();
+    }
   };
+
+  const highlightPreviousCity = () => {
+    setHighlightedIndex((prevIndex) =>
+      prevIndex <= 0 ? citySuggestions.length - 1 : prevIndex - 1
+    );
+  };
+
+  const highlightNextCity = () => {
+    setHighlightedIndex((prevIndex) =>
+      prevIndex === citySuggestions.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const selectHighlightedCity = () => {
+    if (highlightedIndex >= 0 && highlightedIndex < citySuggestions.length) {
+      const city = citySuggestions[highlightedIndex];
+      handleCitySelect(city);
+    }
+  };
+
+  useEffect(() => {
+    const handleEscapeKey = (e) => {
+      if (e.key === "Escape") {
+        setCitySuggestions([]);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscapeKey);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, []);
 
   return (
     <div className="ui icon input">
-      <form onSubmit={handleSubmit}>
+      <form className="searchform" onSubmit={(e) => e.preventDefault()}>
         <input
+          className="searchbarinput"
           type="text"
           id="searchbar"
           placeholder="Rechercher une ville..."
-          onChange={handleInputChange} // Appelle la fonction pour gérer les changements de saisie
+          value={searchText}
+          onChange={handleInputChange}
+          onClick={handleSearchFieldClick} // Gestionnaire d'événements pour le clic dans le champ de recherche
+          onKeyDown={handleKeyDown} // Gestionnaire d'événements pour les touches de clavier
         />
-        <i
-          className="circular search link icon"
-          onClick={handleIconClick} // Appelle la fonction pour gérer le clic sur l'icône de recherche
-        ></i>
+        <div className="icon">
+          {/* <i className="search link icon"></i> */}
+        </div>
       </form>
+      {searchText !== "" && citySuggestions.length > 0 && (
+        <div className="suggestions">
+          {citySuggestions.map((city, index) => (
+            <div
+              key={index}
+              onClick={() => handleCitySelect(city)}
+              className={index === highlightedIndex ? "highlighted" : ""}
+            >
+              {city.name + ", " + city.country}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -38,7 +38,7 @@
       transform: scale(1);
     }
     50% {
-      transform: scale(2);
+      transform: scale(1);
       color: pink;
       z-index: 1;
     }

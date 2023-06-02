@@ -4,7 +4,7 @@ import "./Footer.css";
 function Footer() {
   return (
     <div className="footer-container">
-      Made with <i className="heart outline icon"></i>by me
+      Fait avec <i className="heart outline icon"></i>
       <p>
         <a href="https://www.linkedin.com/in/marlenedfr/" className="footer-links" target="_blank" rel="noopener noreferrer">
           <i className="linkedin icon"></i>

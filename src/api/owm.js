@@ -12,9 +12,8 @@ export const fetchCities = async (searchText) => {
     if (response.status != 200) {
       throw new Error("Une erreur s'est produite lors de la recherche des villes.");
     }
-
     const data = await response.data;
-    console.log(data);
+    // console.log(data);
     if (!Array.isArray(data.data)) {
       throw new Error("Les données renvoyées par l'API ne sont pas valides.");
     }

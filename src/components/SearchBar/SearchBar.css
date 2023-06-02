@@ -1,48 +1,87 @@
 .ui.icon.input {
+  position: relative; 
   display: flex;
   align-items: center;
+  justify-content: left;
   border-bottom: 1px solid #ddd;
+  /* border-radius: 16px; */
   margin: 1.5em;
+  margin-top: -0.3em;
   font-size: 1em;
-  width: 100%;
+  width: 23em;
   position: relative;
   transition: all .14s ease-out;
+  padding: 0.7em;
 }
 
+ /* Champs de saisie */
 .ui.icon.input:hover:not([disabled]) {
-  box-shadow: 0px 3px 0px #000000;
-  /* border: 1.5px solid #141414 !important; */
-  /* transform: translate(-1px,-1px); */
-
+  box-shadow: 0px 2px 0px #746ec3;
 }
-
-/* style button : transition: all .14s ease-out;
-.buttonblack:hover:not([disabled]) {
-  box-shadow: 4px 4px 0px #000000;
-  border: 1.5px solid #141414 !important;
-  transform: translate(-4px,-4px);
-  color: #141414 !important; */
 
 .ui.icon.input input {
   flex: 1;
+  /* border: solid 1px black; */
+  outline: none;
+}
+
+.searchform {
+  flex: 1;
+  width: 100%;
+}
+
+.searchbarinput {
+  flex: 1;
+  width: 100%;
   border: none;
   outline: none;
 }
 
 .ui.icon.input input::placeholder {
+  position: absolute;
+  width: 100%;
   font-style: italic;
   color: #c5c3c3;
 }
 
+/* Icone */
 .ui.icon.input i {
   position: absolute;
-  right: 0.71em;
+  right: 1em;
   top: 40%;
-  transform: translateY(-60%);
+  transform: translateY(-47%);
   cursor: pointer;
-  opacity: 30%;
+  opacity: 100%;
+  color: #c5c3c3;
 }
 
-.ui.icon.input i:hover {
-  color: #000000;
+.ui.icon.input i:hover:not([disabled]) {
+  color: #ffbf01;
 }
+
+.suggestions {
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  /* border: 1px solid #ddd; */
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.suggestions div {
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.suggestions div:hover {
+  background-color: #ffbf01;
+}
+
+.suggestions .highlighted {
+  background-color: #ffbf01;
+}
+
