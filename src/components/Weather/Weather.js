@@ -5,8 +5,8 @@ function Weather({ cities }) {
 
   return (
     <div className="weather-container">
-      {cities.map((city) => (
-        <div key={city.name}>
+      {cities.map((city, index) => (
+        <div key={index}>
           <h2>Ville : {city.name}</h2>
           <p>Température : {city.temperature} °</p>
         </div>

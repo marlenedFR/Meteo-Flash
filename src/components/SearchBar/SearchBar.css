@@ -41,8 +41,28 @@
   transform: translateY(-60%);
   cursor: pointer;
   opacity: 30%;
+  color: #c5c3c3;
 }
 
-.ui.icon.input i:hover {
-  color: #000000;
+
+.suggestions {
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  /* border: 1px solid #ddd; */
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.suggestions div {
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.suggestions div:hover {
+  background-color: #e6e6e6;
 }
