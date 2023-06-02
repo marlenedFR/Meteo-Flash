@@ -20,6 +20,8 @@ function Grid() {
     if (filteredCities.length > 0) {
       const photo = await fetchCityPhoto(filteredCities[0].name);
       setCityPhoto(photo);
+    } else {
+      setCityPhoto(null);
     }
   };
 
@@ -33,10 +35,8 @@ function Grid() {
         <SearchBar onSearch={handleSearch} />
       </div>
       <div className="grid-city-container">
-        <City cityPhoto={cityPhoto} />
-        <div className="weather-city-container">
-          <Weather cities={cities} /> 
-        </div>
+        {cities.length > 0 && cityPhoto && <City cityPhoto={cityPhoto} />}
+        {cities.length > 0 && <div className="weather-city-container"><Weather cities={cities} /></div>}
       </div>
       <div className="footer-row">
         <Footer />
