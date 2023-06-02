@@ -98,7 +98,7 @@ function SearchBar({ onSearch }) {
           onKeyDown={handleKeyDown} // Gestionnaire d'événements pour les touches de clavier
         />
         <div className="icon">
-          <i className="search link icon"></i>
+          {/* <i className="search link icon"></i> */}
         </div>
       </form>
       {searchText !== "" && citySuggestions.length > 0 && (
