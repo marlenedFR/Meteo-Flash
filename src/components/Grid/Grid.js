@@ -9,13 +9,15 @@ import { fetchCityPhoto } from "../../api/unsplash";
 import Footer from "../Footer/Footer";
 import Title from "../Title/Title";
 import Logo from "../Logo/Logo";
+import { fetchCities } from "../../api/owm";
 
 function Grid() {
   const [cities, setCityWeather] = useState([]);
   const [cityPhoto, setCityPhoto] = useState(null);
 
   const handleSearch = async (filteredCities) => {
-    setCityWeather(filteredCities);
+    const cityResults = await fetchCities(filteredCities[0].name);
+    setCityWeather(cityResults);
 
     if (filteredCities.length > 0) {
       const photo = await fetchCityPhoto(filteredCities[0].name);
@@ -36,7 +38,8 @@ function Grid() {
       </div>
       <div className="grid-city-container">
         {cities.length > 0 && cityPhoto && <City cityPhoto={cityPhoto} />}
-        {cities.length > 0 && <div className="weather-city-container"><Weather cities={cities} /></div>}
+        {cities.length > 0 && <div className="weather-city-container">
+          <Weather cities={cities} /></div>}
       </div>
       <div className="footer-row">
         <Footer />

@@ -9,6 +9,7 @@ function Weather({ cities }) {
         <div key={index}>
           <h2>Ville : {city.name}</h2>
           <p>Température : {city.temperature} °</p>
+          <p>Clouds : {city.clouds}</p>
         </div>
       ))}
     </div>
@@ -16,7 +17,13 @@ function Weather({ cities }) {
 }
 
 Weather.propTypes = {
-  cities: PropTypes.array.isRequired,
+  cities: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      temperature: PropTypes.number,
+      clouds: PropTypes.number,
+    })
+  ).isRequired,
 };
 
 export default Weather;
