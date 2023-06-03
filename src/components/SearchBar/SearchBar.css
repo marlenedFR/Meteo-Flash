@@ -89,18 +89,33 @@
   .ui.icon.input {
     width: 20em;
   }
+
+  .searchbarinput {
+    touch-action: manipulation;
+  }
+  
 }
 
 @media (max-width: 992px) {
   .ui.icon.input {
     width: 18em;
   }
+
+  .searchbarinput {
+    touch-action: manipulation;
+  }
+  
 }
 
 @media (max-width: 768px) {
   .ui.icon.input {
     width: 16em;
   }
+
+  .searchbarinput {
+    touch-action: manipulation;
+  }
+  
 }
 
 @media (max-width: 576px) {
@@ -123,4 +138,9 @@
   .suggestions div {
     padding: 8px 12px;
   }
+
+  .searchbarinput {
+    touch-action: manipulation;
+  }
+  
 }
