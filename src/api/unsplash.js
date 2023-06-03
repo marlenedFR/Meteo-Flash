@@ -8,7 +8,7 @@ export const fetchCityPhoto = async (searchText) => {
       throw new Error("Aucune ville trouvée.");
     }
     const cityName = cityResults[0].name;
-    console.log(cityResults);
+    // console.log(cityResults);
 
     const response = await axios.get("https://api.unsplash.com/search/photos", {
       params: {
