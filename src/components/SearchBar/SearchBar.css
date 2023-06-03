@@ -12,6 +12,7 @@
 }
 
 .ui.icon.input input::placeholder {
+  width: 100%;
   font-style: italic;
   color: #c5c3c3;
 }
