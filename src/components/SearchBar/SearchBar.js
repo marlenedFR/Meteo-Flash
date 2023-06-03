@@ -12,8 +12,8 @@ function SearchBar({ onSearch }) {
 
   const handleInputChange = async (e) => {
     const value = e.target.value;
+    // console.log(value); // Ajout de cette ligne pour afficher la valeur
     setSearchText(value);
-
     if (value !== "") {
       const cityResults = await fetchCityName(value);
       setCitySuggestions(cityResults);
@@ -24,11 +24,11 @@ function SearchBar({ onSearch }) {
   };
 
   const handleCitySelect = async (city) => {
-    console.log("Ville sélectionnée :", city);
-    setSearchText(city.name + ", " + city.country);
+    // console.log("Ville sélectionnée :", city);
+    setSearchText(city.name);
 
     const cityResults = await fetchCities(city.name);
-    const photoResults = await fetchCityPhoto(city.name, city.country);
+    const photoResults = await fetchCityPhoto(city.name);
     onSearch([city], cityResults, photoResults);
 
     setCitySuggestions([]); // Masquer la liste déroulante
@@ -109,7 +109,7 @@ function SearchBar({ onSearch }) {
               onClick={() => handleCitySelect(city)}
               className={index === highlightedIndex ? "highlighted" : ""}
             >
-              {city.name + ", " + city.country}
+              {city.name}
             </div>
           ))}
         </div>
