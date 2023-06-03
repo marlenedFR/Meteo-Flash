@@ -71,7 +71,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(0.4);
+  transform: scale(0.7);
   position: relative;
   z-index: 1;
 }
