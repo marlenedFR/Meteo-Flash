@@ -14,6 +14,7 @@ function SearchBar({ onSearch }) {
     const value = e.target.value;
     // console.log(value); // Ajout de cette ligne pour afficher la valeur
     setSearchText(value);
+
     if (value !== "") {
       const cityResults = await fetchCityName(value);
       setCitySuggestions(cityResults);
