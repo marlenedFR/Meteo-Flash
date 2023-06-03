@@ -9,6 +9,7 @@
     "assert": "^2.0.0",
     "axios": "^1.4.0",
     "difflib": "^0.2.4",
+    "dompurify": "^3.0.3",
     "gulp": "^4.0.2",
     "natural": "^6.5.0",
     "react": "^18.2.0",
