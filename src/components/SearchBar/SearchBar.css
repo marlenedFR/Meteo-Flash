@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 0.1em solid #ddd;
   /* border-radius: 16px; */
   margin: 1.5em;
   margin-top: -0.3em;
@@ -16,7 +16,7 @@
 
  /* Champs de saisie */
 .ui.icon.input:hover:not([disabled]) {
-  box-shadow: 0px 2px 0px #746ec3;
+  box-shadow: 0px 0.1em 0px #746ec3;
 }
 
 .ui.icon.input input {
@@ -73,7 +73,7 @@
 }
 
 .suggestions div {
-  padding: 12px 16px;
+  padding: 0.75em 1em;
   cursor: pointer;
 }
 
@@ -85,3 +85,42 @@
   background-color: #ffbf01;
 }
 
+@media (max-width: 1200px) {
+  .ui.icon.input {
+    width: 20em;
+  }
+}
+
+@media (max-width: 992px) {
+  .ui.icon.input {
+    width: 18em;
+  }
+}
+
+@media (max-width: 768px) {
+  .ui.icon.input {
+    width: 16em;
+  }
+}
+
+@media (max-width: 576px) {
+  .ui.icon.input {
+    width: 14em;
+    margin: 1em;
+    margin-top: -0.3em;
+    font-size: 0.9em;
+    padding: 0.5em;
+  }
+
+  .ui.icon.input i {
+    right: 0.8em;
+  }
+
+  .suggestions {
+    max-height: 150px;
+  }
+
+  .suggestions div {
+    padding: 8px 12px;
+  }
+}
