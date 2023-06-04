@@ -12,31 +12,29 @@ function SearchBar({ onSearch }) {
 
   const handleInputChange = async (e) => {
     const value = e.target.value;
-    // console.log(value); // Ajout de cette ligne pour afficher la valeur
     setSearchText(value);
 
     if (value !== "") {
       const cityResults = await fetchCityName(value);
       setCitySuggestions(cityResults);
-      setHighlightedIndex(-1); // Réinitialiser l'index de mise en évidence
+      setHighlightedIndex(-1);
     } else {
       setCitySuggestions([]);
     }
   };
 
   const handleCitySelect = async (city) => {
-    // console.log("Ville sélectionnée :", city);
     setSearchText(city.name);
 
     const cityResults = await fetchCities(city.name);
     const photoResults = await fetchCityPhoto(city.name);
     onSearch([city], cityResults, photoResults);
 
-    setCitySuggestions([]); // Masquer la liste déroulante
+    setCitySuggestions([]);
   };
 
   const handleSearchFieldClick = () => {
-    setSearchText(""); // Effacer le texte de recherche actuel
+    setSearchText("");
   };
 
   const handleKeyDown = (e) => {
@@ -48,9 +46,16 @@ function SearchBar({ onSearch }) {
       highlightNextCity();
     } else if (e.key === "Enter") {
       e.preventDefault();
-      selectHighlightedCity();
+      if (highlightedIndex >= 0) {
+        selectHighlightedCity();
+      } else {
+        // Effectuer la recherche avec le texte de recherche actuel
+        const city = { name: searchText };
+        handleCitySelect(city);
+      }
     }
   };
+  
 
   const highlightPreviousCity = () => {
     setHighlightedIndex((prevIndex) =>
@@ -71,6 +76,11 @@ function SearchBar({ onSearch }) {
     }
   };
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    selectHighlightedCity();
+  };
+
   useEffect(() => {
     const handleEscapeKey = (e) => {
       if (e.key === "Escape") {
@@ -87,7 +97,7 @@ function SearchBar({ onSearch }) {
 
   return (
     <div className="ui icon input">
-      <form className="searchform" onSubmit={(e) => e.preventDefault()}>
+      <form className="searchform" onSubmit={handleFormSubmit}>
         <input
           className="searchbarinput"
           type="text"
@@ -95,11 +105,10 @@ function SearchBar({ onSearch }) {
           placeholder="Rechercher une ville..."
           value={searchText}
           onChange={handleInputChange}
-          onClick={handleSearchFieldClick} // Gestionnaire d'événements pour le clic dans le champ de recherche
-          onKeyDown={handleKeyDown} // Gestionnaire d'événements pour les touches de clavier
+          onClick={handleSearchFieldClick}
+          onKeyDown={handleKeyDown}
         />
         <div className="icon">
-          {/* <i className="search link icon"></i> */}
         </div>
       </form>
       {searchText !== "" && citySuggestions.length > 0 && (
