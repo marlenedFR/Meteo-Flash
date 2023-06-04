@@ -9,11 +9,9 @@ function SearchBar({ onSearch }) {
   const [citySuggestions, setCitySuggestions] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
-
   const handleInputChange = async (e) => {
     const value = e.target.value;
     setSearchText(value);
-
     if (value !== "") {
       const cityResults = await fetchCityName(value);
       setCitySuggestions(cityResults);
@@ -49,47 +47,38 @@ function SearchBar({ onSearch }) {
       if (highlightedIndex >= 0) {
         selectHighlightedCity();
       } else {
-        // Effectuer la recherche avec le texte de recherche actuel
         const city = { name: searchText };
         handleCitySelect(city);
       }
     }
   };
-  
-
   const highlightPreviousCity = () => {
     setHighlightedIndex((prevIndex) =>
       prevIndex <= 0 ? citySuggestions.length - 1 : prevIndex - 1
     );
   };
-
   const highlightNextCity = () => {
     setHighlightedIndex((prevIndex) =>
       prevIndex === citySuggestions.length - 1 ? 0 : prevIndex + 1
     );
   };
-
   const selectHighlightedCity = () => {
     if (highlightedIndex >= 0 && highlightedIndex < citySuggestions.length) {
       const city = citySuggestions[highlightedIndex];
       handleCitySelect(city);
     }
   };
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
     selectHighlightedCity();
   };
-
   useEffect(() => {
     const handleEscapeKey = (e) => {
       if (e.key === "Escape") {
         setCitySuggestions([]);
       }
     };
-
     document.addEventListener("keydown", handleEscapeKey);
-
     return () => {
       document.removeEventListener("keydown", handleEscapeKey);
     };

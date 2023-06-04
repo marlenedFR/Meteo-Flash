@@ -91,9 +91,19 @@
   background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(27, 1, 100, 0.575);
   border-radius: 8px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px #00000033;
 }
 
+.no-photo-found {
+  min-height: 18.57em;
+}
+
+.comment {
+  margin-top: -0.7em;
+  color: #00000071;
+  font-size: 1em;
+}
+ 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   .grid {

@@ -1,4 +1,3 @@
-// import city from "../../assets/images/quentin-gTuRT6HVFsg-unsplash.jpg";
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -12,7 +11,7 @@ function City({ cityPhoto }) {
           <p>Photographer: {cityPhoto.photographer}</p>
         </div>
       ) : (
-        <p>Aucune photo trouvée</p>
+        {/* <p>Aucune photo trouvée</p> */}
       )}
     </div>
   );
