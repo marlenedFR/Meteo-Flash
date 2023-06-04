@@ -1,14 +1,13 @@
 .grid {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: relative;
+  align-items: center;  
   max-width: 30em;
   width: 80%;
   background-color: white;
   border-radius: 3px;
-  box-shadow: 5px 5px 8px rgba(27, 1, 100, 0.575); 
-  
+  box-shadow: 5px 5px 8px rgba(27, 1, 100, 0.575);  
 }
 
 .logo-container {
@@ -54,16 +53,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0.80em;
+  margin-bottom: 1.80em;
 }
 
 .grid-city-container {
   position: relative;
-  width: 100%;
-  max-height: 18.57em;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  min-height: 18.57em;
+  max-height: 18.57em;
   overflow: hidden;
 }
 
@@ -80,11 +80,11 @@
   padding: 3%;
   position: absolute;
   z-index: 2;
-  top: 30%;
+  top: 27%;
   left: 40.5%;
   transform: translate(-50%, -50%);
-  width: 70%; /* vous pouvez ajuster cette valeur selon vos besoins */
-  max-width: 27em; /* pour limiter la largeur maximale */
+  width: 70%; 
+  max-width: 27em;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -94,16 +94,7 @@
   box-shadow: 0px 8px 16px 0px #00000033;
 }
 
-.no-photo-found {
-  min-height: 18.57em;
-}
 
-.comment {
-  margin-top: -0.7em;
-  color: #00000071;
-  font-size: 1em;
-}
- 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   .grid {
@@ -118,7 +109,12 @@
     max-width: 36em;
     width: 70%;
   }
+  .weather-city-container {
+    padding: 2%;
+    left: 35%;
+  }
 }
+
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
@@ -136,14 +132,5 @@
   }
 }
 
-/* Adjustments for larger screens */
-@media (min-width: 768px) {
-  .weather-city-container {
-    padding: 2%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
 
 

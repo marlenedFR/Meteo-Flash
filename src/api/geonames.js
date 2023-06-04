@@ -5,17 +5,22 @@ const convertTextToData = (text, searchText) => {
 
   const options = {
     keys: ["name"],
-    threshold: 0.4, // Ajustez le seuil de correspondance selon vos besoins
+    threshold: 0.4,
   };
 
   const fuse = new Fuse(lines, options);
   const searchResults = fuse.search(searchText);
 
   const filteredResults = searchResults
-    .map((result) => ({
-      name: result.item.split("\t")[1],
-      population: parseInt(result.item.split("\t")[14]) || 0,
-    }))
+    .map((result) => {
+      const fields = result.item.split("\t");
+      const country = fields[8];
+      return {
+        code: country,
+        name: fields[1],
+        population: parseInt(fields[14]) || 0,
+      };
+    })
     .filter((city) => !!city.name)
     .sort((a, b) => b.population - a.population);
 
@@ -24,8 +29,9 @@ const convertTextToData = (text, searchText) => {
     regex.test(city.name)
   );
 
-  return finalResults.slice(0, 5);
+  return finalResults.slice(0, 10);
 };
+
 
 export const fetchCityName = async (searchText) => {
   try {
@@ -47,3 +53,4 @@ export const fetchCityName = async (searchText) => {
     return [];
   }
 };
+

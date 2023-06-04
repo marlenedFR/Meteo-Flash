@@ -41,6 +41,19 @@
   background-color: #ffbf01;
 }
 
+.suggestions-message {
+  color: #c5c3c3;
+}
+
+.suggestions .suggestions-message {
+  background-color: transparent !important;
+  cursor: default !important;
+}
+
+
+
+
+
 @media (max-width: 1200px) {
   .ui.icon.input {
     width: 20em;

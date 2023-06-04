@@ -1,0 +1,15 @@
+.no-photo-found {
+    margin-top: 9em;
+    min-height: 18.57em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .comment {
+    margin-top: -0.7em;
+    color: #00000071;
+    font-size: 1em;
+  }

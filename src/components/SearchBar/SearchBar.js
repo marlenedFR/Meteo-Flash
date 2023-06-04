@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import "./SearchBar.css";
 import { fetchCities } from "../../api/weatherbit";
@@ -6,9 +6,13 @@ import { fetchCityPhoto } from "../../api/unsplash";
 import { fetchCityName } from "../../api/geonames";
 
 function SearchBar({ onSearch }) {
+
   const [citySuggestions, setCitySuggestions] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
+  const suggestionsRef = useRef(null);
+
+
   const handleInputChange = async (e) => {
     const value = e.target.value;
     setSearchText(value);
@@ -20,7 +24,6 @@ function SearchBar({ onSearch }) {
       setCitySuggestions([]);
     }
   };
-
   const handleCitySelect = async (city) => {
     setSearchText(city.name);
 
@@ -30,11 +33,9 @@ function SearchBar({ onSearch }) {
 
     setCitySuggestions([]);
   };
-
   const handleSearchFieldClick = () => {
     setSearchText("");
   };
-
   const handleKeyDown = (e) => {
     if (e.key === "ArrowUp") {
       e.preventDefault();
@@ -56,11 +57,19 @@ function SearchBar({ onSearch }) {
     setHighlightedIndex((prevIndex) =>
       prevIndex <= 0 ? citySuggestions.length - 1 : prevIndex - 1
     );
+    
+    if (suggestionsRef.current) {
+      suggestionsRef.current.scrollTop -= 25;
+    }
   };
   const highlightNextCity = () => {
     setHighlightedIndex((prevIndex) =>
       prevIndex === citySuggestions.length - 1 ? 0 : prevIndex + 1
     );
+
+    if (suggestionsRef.current) {
+      suggestionsRef.current.scrollTop += 30; // Ajustez cette valeur selon vos besoins
+    }
   };
   const selectHighlightedCity = () => {
     if (highlightedIndex >= 0 && highlightedIndex < citySuggestions.length) {
@@ -81,7 +90,7 @@ function SearchBar({ onSearch }) {
     document.addEventListener("keydown", handleEscapeKey);
     return () => {
       document.removeEventListener("keydown", handleEscapeKey);
-    };
+    };  
   }, []);
 
   return (
@@ -100,15 +109,18 @@ function SearchBar({ onSearch }) {
         <div className="icon">
         </div>
       </form>
+
       {searchText !== "" && citySuggestions.length > 0 && (
-        <div className="suggestions">
+        <div className="suggestions" ref={suggestionsRef}>
+          <div className="suggestions-message">-- Suggestions -- </div>
+
           {citySuggestions.map((city, index) => (
             <div
               key={index}
               onClick={() => handleCitySelect(city)}
               className={index === highlightedIndex ? "highlighted" : ""}
             >
-              {city.name}
+              {city.name}, {city.code}
             </div>
           ))}
         </div>

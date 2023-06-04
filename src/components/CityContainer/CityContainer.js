@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import "./CityContainer.css";
+
 import City from "../City/City";
 import Weather from "../Weather/Weather";
 
@@ -12,7 +14,7 @@ function CityContainer({ cities, cityPhoto }) {
       ) : (
         <div className="no-photo-found">
           <p>Aucune photo trouvée pour cette ville.</p>
-          <p className="comment">Veuillez réessayer.</p>
+          <p className="comment">(source : https://unsplash.com)</p>
         </div>
       )}
       <div className="weather-city-container">
