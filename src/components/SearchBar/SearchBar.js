@@ -125,6 +125,13 @@ function SearchBar({ onSearch }) {
     };
   }, []);
 
+  const handleKeyUp = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleFormSubmit(e);
+    }
+  };
+
   return (
     <div className="ui icon input">
       <form className="searchform" onSubmit={handleFormSubmit}>
@@ -137,7 +144,8 @@ function SearchBar({ onSearch }) {
             value={searchText}
             onChange={handleInputChange}
             onClick={handleSearchFieldClick}
-            onKeyDown={handleKeyDown} />
+            onKeyDown={handleKeyDown}
+            onKeyUp={handleKeyUp} />
           <div className="location-icon" onClick={handleLocationClick}>
             <Icon name="map marker alternate" />
           </div>
