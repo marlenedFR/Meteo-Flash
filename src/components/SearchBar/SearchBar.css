@@ -2,25 +2,28 @@
   display: flex;
   align-items: center;
   justify-content: left;
-  border-bottom: 0.1em solid #ddd;
   font-size: 1em;
+  box-sizing: border-box;
+
 }
 
 .searchbarinput {
   border: none;
   outline: none;
+  border-bottom: 0.1em solid #ddd;
 }
 
 .searchform {
   display: flex;
   align-items: center;
+  width: 100%;
+
 }
 
 .input-wrapper {
   display: flex;
-  align-items: center;
+  align-items: end;  
 }
-
 
 .ui.icon.input input::placeholder {
   width: 100%;
