@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import oups from "../../assets/images/oups.png";
 
 import "./CityContainer.css";
 
@@ -13,6 +14,8 @@ function CityContainer({ cities, cityPhoto }) {
         <City cityPhoto={cityPhoto} />
       ) : (
         <div className="no-photo-found">
+          <img className="oups" src={oups} alt="Oups" />
+
           <p>Aucune photo trouvée pour cette ville.</p>
           <p className="comment">(source : https://unsplash.com)</p>
         </div>
