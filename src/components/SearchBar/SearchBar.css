@@ -1,13 +1,7 @@
-.ui.icon.input {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  font-size: 1em;
-  box-sizing: border-box;
-
-}
-
 .searchbarinput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   outline: none;
   border-bottom: 0.1em solid #ddd;
@@ -16,13 +10,14 @@
 .searchform {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
-
 }
 
 .input-wrapper {
   display: flex;
-  align-items: end;  
+  align-items: center;
+  justify-content: center;
 }
 
 .ui.icon.input input::placeholder {
@@ -34,6 +29,8 @@
 .map.marker.alternate {
   color: #c5c3c3;
   cursor: pointer;
+  margin-left: 1em;
+  margin-bottom: 1em;
 }
 
 .suggestions {
