@@ -94,10 +94,10 @@
   box-shadow: 0px 8px 16px 0px #00000033;
 }
 
-
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   .grid {
+    /* Styles spécifiques pour min-width: 576px */
     max-width: 30em;
     width: 80%;
   }
@@ -106,19 +106,21 @@
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .grid {
+    /* Styles spécifiques pour min-width: 768px */
     max-width: 36em;
     width: 70%;
   }
   .weather-city-container {
+    /* Styles spécifiques pour min-width: 768px */
     padding: 2%;
-    left: 35%;
+    left: 40%;
   }
 }
-
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .grid {
+    /* Styles spécifiques pour min-width: 992px */
     max-width: 42em;
     width: 60%;
   }
@@ -127,10 +129,12 @@
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .grid {
+    /* Styles spécifiques pour min-width: 1200px */
     max-width: 48em;
     width: 50%;
   }
 }
+
 
 
 

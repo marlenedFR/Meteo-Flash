@@ -4,7 +4,7 @@ import "./SearchBar.css";
 import { fetchCities, fetchCityByCoordinates } from "../../api/weatherbit";
 import { fetchCityPhoto } from "../../api/unsplash";
 import { fetchCityName } from "../../api/geonames";
-import { Icon, Input } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 
 function SearchBar({ onSearch }) {
   const [citySuggestions, setCitySuggestions] = useState([]);
@@ -127,9 +127,6 @@ function SearchBar({ onSearch }) {
 
   const handleKeyUp = (e) => {
     if (
-      e.key === "Enter" ||
-      e.key === "Done" ||
-      e.key === "Ok" ||
       e.keyCode === 13 ||
       e.keyCode === 229
     ) {
@@ -139,26 +136,19 @@ function SearchBar({ onSearch }) {
   
 
   return (
-    <div className="ui icon input">
+    <div className="form-wrapper">
       <form className="searchform" onSubmit={handleFormSubmit}>
-        <div className="input-wrapper">
-          <Input
-            className="searchbarinput"
-            type="input"
-            id="searchbar"
-            placeholder="Rechercher une ville..."
-            value={searchText}
-            onChange={handleInputChange}
-            onClick={handleSearchFieldClick}
-            onKeyDown={handleKeyDown}
-            onKeyUp={handleKeyUp}
-          />
-          <p>
-            <div className="location-icon" onClick={handleLocationClick}>
-              <Icon name="map marker alternate" />
-            </div>
-          </p>
-        </div>
+        <input
+          className="ui input"
+          type="input"
+          id="searchbar"
+          placeholder="Rechercher une ville..."
+          value={searchText}
+          onChange={handleInputChange}
+          onClick={handleSearchFieldClick}
+          onKeyDown={handleKeyDown}
+          onKeyUp={handleKeyUp}
+        />
       </form>
       {searchText !== "" && citySuggestions.length > 0 && (
         <div className="suggestions" ref={suggestionsRef}>
@@ -174,6 +164,11 @@ function SearchBar({ onSearch }) {
           ))}
         </div>
       )}
+      
+      <div className="location-wrapper">
+          Où utiliser ma position :<Icon name="map marker alternate" onClick={handleLocationClick}/>
+      </div>
+      
     </div>
 
   );

@@ -1,10 +1,16 @@
-.searchbarinput {
+.form-wrapper {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   border: none;
   outline: none;
-  border-bottom: 0.1em solid #ddd;
+}
+
+.ui.input {
+border: none;
+outline: none;
 }
 
 .searchform {
@@ -12,7 +18,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-}
+  border-bottom: 0.1em solid #ddd;}
 
 .input-wrapper {
   display: flex;
@@ -20,23 +26,29 @@
   justify-content: center;
 }
 
-.ui.icon.input input::placeholder {
+.searchform input::placeholder {
   width: 100%;
   font-style: italic;
   color: #c5c3c3;
 }
 
+.location-wrapper {
+  position:static;
+  font-style: italic;
+  color: #c5c3c3;
+  margin-top: 1.5em;}
+
 .map.marker.alternate {
   color: #c5c3c3;
   cursor: pointer;
-  margin-left: 1em;
+  margin-left: 0.5em;
   margin-bottom: 1em;
 }
 
 .suggestions {
   position: absolute;
   z-index: 3;
-  top: 100%;
+  top: 30%;
   left: 0;
   right: 0;
   overflow-y: auto;
@@ -45,7 +57,7 @@
 }
 
 .suggestions div {
-  padding: 10px;
+  padding: 0.6em;
   cursor: pointer;
 }
 
@@ -66,39 +78,59 @@
   cursor: default !important;
 }
 
+
 @media (max-width: 1200px) {
-  .ui.icon.input {
-    width: 20em;
+  .form-wrapper {
+    /* Styles spécifiques pour max-width: 1200px */
+    margin-top: 2em;
+    padding: 1em;
+  }
+
+  .suggestions {
+    /* Styles spécifiques pour max-width: 1200px */
+    position: absolute;
+    top: 25%;
   }
 }
 
 @media (max-width: 992px) {
-  .ui.icon.input {
-    width: 18em;
+  .form-wrapper {
+    /* Styles spécifiques pour max-width: 992px */
+    margin-top: 1.5em;
+    padding: 0.5em;
+  }
+
+  .suggestions {
+    /* Styles spécifiques pour max-width: 992px */
+    position: absolute;
+    top: 20%;
   }
 }
 
 @media (max-width: 768px) {
-  .ui.icon.input {
-    width: 16em;
+  .form-wrapper {
+    /* Styles spécifiques pour max-width: 768px */
+    margin-top: 1em;
+    padding: 0.25em;
+  }
+
+  .suggestions {
+    /* Styles spécifiques pour max-width: 768px */
+    position: absolute;
+    top: 15%;
   }
 }
 
 @media (max-width: 576px) {
-  .ui.icon.input {
-    width: 14em;
-    font-size: 0.9em;
-  }
-
-  .ui.icon.input i {
-    right: 0.8em;
+  .form-wrapper {
+    /* Styles spécifiques pour max-width: 576px */
+    margin-top: 0.5em;
+    padding: 0.25em;
   }
 
   .suggestions {
-    max-height: 150px;
-  }
-
-  .suggestions div {
-    padding: 8px 12px;
+    /* Styles spécifiques pour max-width: 576px */
+    position: absolute;
+    top: 10%;
   }
 }
