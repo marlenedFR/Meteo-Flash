@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import "./SearchBar.css";
-import { fetchCities, fetchCityByCoordinates } from "../../api/weatherbit";
+import { fetchCities } from "../../api/weatherbit";
 import { fetchCityPhoto } from "../../api/unsplash";
 import { fetchCityName } from "../../api/geonames";
-import { Icon } from "semantic-ui-react";
+// import { Icon } from "semantic-ui-react";
 
 function SearchBar({ onSearch }) {
   const [citySuggestions, setCitySuggestions] = useState([]);
@@ -66,29 +66,29 @@ function SearchBar({ onSearch }) {
     }
   };
 
-  const handleLocationClick = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        successCallback,
-        errorCallback
-      );
-    } else {
-      console.log("La géolocalisation n'est pas prise en charge par votre navigateur.");
-    }
-  };
+  // const handleLocationClick = () => {
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(
+  //       successCallback,
+  //       errorCallback
+  //     );
+  //   } else {
+  //     console.log("La géolocalisation n'est pas prise en charge par votre navigateur.");
+  //   }
+  // };
 
-  const successCallback = async (position) => {
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
+  // const successCallback = async (position) => {
+  //   const latitude = position.coords.latitude;
+  //   const longitude = position.coords.longitude;
 
-    const cityResults = await fetchCityByCoordinates(latitude, longitude);
-    const photoResults = await fetchCityPhoto(cityResults[0].name);
-    onSearch(cityResults, cityResults, photoResults);
-  };
+  //   const cityResults = await fetchCityByCoordinates(latitude, longitude);
+  //   const photoResults = await fetchCityPhoto(cityResults[0].name);
+  //   onSearch(cityResults, cityResults, photoResults);
+  // };
 
-  const errorCallback = (error) => {
-    console.log("Une erreur s'est produite lors de la récupération de la position :", error);
-  };
+  // const errorCallback = (error) => {
+  //   console.log("Une erreur s'est produite lors de la récupération de la position :", error);
+  // };
 
   const highlightNextCity = () => {
     setHighlightedIndex((prevIndex) =>
@@ -147,11 +147,11 @@ function SearchBar({ onSearch }) {
             onKeyDown={handleKeyDown}
             onKeyUp={handleKeyUp}
           />
-          <p>
+          {/* <p>
             <div className="location-icon" onClick={handleLocationClick}>
               <Icon name="map marker alternate" />
             </div>
-          </p>
+          </p> */}
         </div>
       </form>
       {searchText !== "" && citySuggestions.length > 0 && (
