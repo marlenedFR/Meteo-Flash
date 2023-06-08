@@ -4,7 +4,7 @@ import "./SearchBar.css";
 import { fetchCities, fetchCityByCoordinates } from "../../api/weatherbit";
 import { fetchCityPhoto } from "../../api/unsplash";
 import { fetchCityName } from "../../api/geonames";
-import { Icon } from "semantic-ui-react";
+import { Icon, Input } from "semantic-ui-react";
 
 function SearchBar({ onSearch }) {
   const [citySuggestions, setCitySuggestions] = useState([]);
@@ -142,7 +142,7 @@ function SearchBar({ onSearch }) {
     <div className="ui icon input">
       <form className="searchform" onSubmit={handleFormSubmit}>
         <div className="input-wrapper">
-          <input
+          <Input
             className="searchbarinput"
             type="input"
             id="searchbar"
