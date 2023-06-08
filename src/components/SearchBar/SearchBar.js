@@ -127,7 +127,7 @@ function SearchBar({ onSearch }) {
 
   const handleKeyUp = (e) => {
     const enterKeyCodes = [13];
-    if (enterKeyCodes.includes(e.key)) {
+    if (enterKeyCodes.includes(e.keyCode)) {
       e.preventDefault();
       handleFormSubmit(e);
     }
