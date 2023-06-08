@@ -126,10 +126,17 @@ function SearchBar({ onSearch }) {
   }, []);
 
   const handleKeyUp = (e) => {
-    if (e.key === "Enter" || e.key === "Done" || e.key === "Ok" || e.keyCode === 13) {
+    if (
+      e.key === "Enter" ||
+      e.key === "Done" ||
+      e.key === "Ok" ||
+      e.keyCode === 13 ||
+      e.keyCode === 229
+    ) {
       handleFormSubmit(e);
     }
   };
+  
 
   return (
     <div className="ui icon input">
