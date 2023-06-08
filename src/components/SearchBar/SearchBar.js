@@ -126,7 +126,7 @@ function SearchBar({ onSearch }) {
   }, []);
 
   const handleKeyUp = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" || e.key === "Done" || e.key === "Ok" || e.keyCode === 13) {
       handleFormSubmit(e);
     }
   };
