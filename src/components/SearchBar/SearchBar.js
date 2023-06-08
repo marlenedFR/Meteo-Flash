@@ -133,7 +133,7 @@ function SearchBar({ onSearch }) {
 
   return (
     <div className="ui icon input">
-      <form className="searchform" onSubmit={handleFormSubmit}>
+      <form className="searchform">
         <div className="input-wrapper">
           <input
             className="searchbarinput"
@@ -141,6 +141,7 @@ function SearchBar({ onSearch }) {
             id="searchbar"
             placeholder="Rechercher une ville..."
             value={searchText}
+            onSubmit={handleFormSubmit}
             onChange={handleInputChange}
             onClick={handleSearchFieldClick}
             onKeyDown={handleKeyDown}
