@@ -126,16 +126,10 @@ function SearchBar({ onSearch }) {
   }, []);
 
   const handleKeyUp = (e) => {
-    const enterKeyCodes = [13]; // Codes de touche pour la touche "Entrée"
-  
-    const enterKeyValues = ["Enter", "OK", "Go", "Done"]; // Valeurs de touches courantes
-  
-    if (enterKeyCodes.includes(e.keyCode) || enterKeyValues.includes(e.key)) {
-      e.preventDefault();
+    if (e.key === "Enter") {
       handleFormSubmit(e);
     }
   };
-  
 
   return (
     <div className="ui icon input">
@@ -143,7 +137,7 @@ function SearchBar({ onSearch }) {
         <div className="input-wrapper">
           <input
             className="searchbarinput"
-            type="text"
+            type="input"
             id="searchbar"
             placeholder="Rechercher une ville..."
             value={searchText}
