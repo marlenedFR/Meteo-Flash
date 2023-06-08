@@ -9,16 +9,13 @@
 }
 
 .ui.input {
-  justify-content: center;
-  align-items: center;
-border: none;
-outline: none;
+  justify-content: left;
+  align-items: left;
+  border: none;
+  outline: none;
 }
 
 .searchform {
-  display: flex;
-  align-items: left;
-  justify-content: left;
   width: 100%;
   border-bottom: 0.1em solid #ddd;}
 
