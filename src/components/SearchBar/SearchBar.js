@@ -126,12 +126,16 @@ function SearchBar({ onSearch }) {
   }, []);
 
   const handleKeyUp = (e) => {
-    const enterKeyCodes = [13];
-    if (enterKeyCodes.includes(e.keyCode)) {
+    const enterKeyCodes = [13]; // Codes de touche pour la touche "Entrée"
+  
+    const enterKeyValues = ["Enter", "OK", "Go", "Done"]; // Valeurs de touches courantes
+  
+    if (enterKeyCodes.includes(e.keyCode) || enterKeyValues.includes(e.key)) {
       e.preventDefault();
       handleFormSubmit(e);
     }
   };
+  
 
   return (
     <div className="ui icon input">
