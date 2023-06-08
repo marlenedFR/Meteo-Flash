@@ -125,12 +125,12 @@ function SearchBar({ onSearch }) {
     };
   }, []);
 
-  const handleKeyUp = (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      handleFormSubmit(e);
-    }
-  };
+  // const handleKeyUp = (e) => {
+  //   if (e.key === "Enter") {
+  //     e.preventDefault();
+  //     handleFormSubmit(e);
+  //   }
+  // };
 
   return (
     <div className="ui icon input">
@@ -145,10 +145,13 @@ function SearchBar({ onSearch }) {
             onChange={handleInputChange}
             onClick={handleSearchFieldClick}
             onKeyDown={handleKeyDown}
-            onKeyUp={handleKeyUp} />
-          <div className="location-icon" onClick={handleLocationClick}>
-            <Icon name="map marker alternate" />
-          </div>
+            // onKeyUp={handleKeyUp}
+          />
+          <p>
+            <div className="location-icon" onClick={handleLocationClick}>
+              <Icon name="map marker alternate" />
+            </div>
+          </p>
         </div>
       </form>
       {searchText !== "" && citySuggestions.length > 0 && (
