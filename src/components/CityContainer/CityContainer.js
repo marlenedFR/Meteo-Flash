@@ -15,9 +15,8 @@ function CityContainer({ cities, cityPhoto }) {
       ) : (
         <div className="no-photo-found">
           <img className="oups" src={oups} alt="Oups" />
-
           <p>Aucune photo trouvée pour cette ville.</p>
-          <p className="comment">(source : https://unsplash.com)</p>
+          <p className="comment">(source : <a href="https://unsplash.com" alt="Unsplash" target="_blank" rel="noreferrer">https://unsplash.com</a>)</p>
         </div>
       )}
       <div className="weather-city-container">

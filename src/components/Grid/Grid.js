@@ -9,11 +9,18 @@ import Footer from "../Footer/Footer";
 import Title from "../Title/Title";
 import Logo from "../Logo/Logo";
 import { fetchCities } from "../../api/weatherbit";
+import Sidebar from "../Sidebar/Sidebar";
 
 function Grid() {
+  const [showSidebar, setShowSidebar] = useState(false);
+
   const [cities, setCityWeather] = useState([]);
   const [cityPhoto, setCityPhoto] = useState(null);
   const [showCityContainer, setShowCityContainer] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowSidebar(!showSidebar);
+  };
 
   const handleSearch = async (filteredCities) => {
     const cityResults = await fetchCities(filteredCities[0].name);
@@ -31,9 +38,15 @@ function Grid() {
 
   return (
     <div className="grid">
+      {showSidebar && <Sidebar onClose={handleButtonClick} />}
       <div className="top-row">
         <Logo />
         <Title />
+        <div className="sidebar-container">
+          <button className="circular ui icon button" onClick={handleButtonClick}>
+            <i className="icon info"></i>
+          </button>
+        </div>
       </div>
       <div className="middle-row">
         <SearchBar onSearch={handleSearch} />

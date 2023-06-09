@@ -35,6 +35,24 @@
   transform: translateX(-50%);
 }
 
+.sidebar-container {
+  margin-bottom: 2em;  
+}
+
+.circular.ui.icon.button {
+  position: absolute;
+  top: 0.5em;
+  left: 90%;
+  aspect-ratio: 1/1;
+}
+
+.icon.info {
+  font-size: 1em;
+  top: 0.5em;
+  left: 90%;
+  aspect-ratio: 1/1;
+}
+
 .title-container {
   margin-top: 1em;
   margin-bottom: -1em;

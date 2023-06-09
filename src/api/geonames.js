@@ -29,7 +29,7 @@ const convertTextToData = (text, searchText) => {
     regex.test(city.name)
   );
 
-  return finalResults.slice(0, 10);
+  return finalResults.slice(0, 5);
 };
 
 
