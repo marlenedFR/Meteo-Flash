@@ -120,8 +120,12 @@ function SearchBar({ onSearch }) {
     };
 
     document.addEventListener("keydown", handleEscapeKey);
+    document.addEventListener("click", handleOutsideClick); // Ajout du gestionnaire d'événements click
+
     return () => {
       document.removeEventListener("keydown", handleEscapeKey);
+      document.removeEventListener("click", handleOutsideClick); // Suppression du gestionnaire d'événements click lors du nettoyage
+
     };
   }, []);
 
@@ -133,6 +137,13 @@ function SearchBar({ onSearch }) {
       handleFormSubmit(e);
     }
   };
+
+  const handleOutsideClick = (e) => {
+    if (suggestionsRef.current && !suggestionsRef.current.contains(e.target)) {
+      setCitySuggestions([]);
+    }
+  };
+  
   
 
   return (
@@ -166,7 +177,7 @@ function SearchBar({ onSearch }) {
       )}
       
       <div className="location-wrapper">
-          Où utiliser ma position :<Icon name="map marker alternate" onClick={handleLocationClick}/>
+          Ou utiliser ma position :<Icon name="map marker alternate" onClick={handleLocationClick}/>
       </div>
       
     </div>

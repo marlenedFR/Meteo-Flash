@@ -31,7 +31,9 @@
   position:static;
   font-style: italic;
   color: #c5c3c3;
-  margin-top: 1.5em;}
+  margin-top: 1.5em;
+  margin-bottom: -1em;
+}
 
 .map.marker.alternate {
   color: #c5c3c3;
@@ -84,7 +86,7 @@
   .suggestions {
     /* Styles spécifiques pour max-width: 1200px */
     position: absolute;
-    top: 25%;
+    top: 35%;
   }
 }
 
@@ -98,7 +100,7 @@
   .suggestions {
     /* Styles spécifiques pour max-width: 992px */
     position: absolute;
-    top: 20%;
+    top: 35%;
   }
 }
 
@@ -112,7 +114,7 @@
   .suggestions {
     /* Styles spécifiques pour max-width: 768px */
     position: absolute;
-    top: 15%;
+    top: 35%;
   }
 }
 
@@ -126,6 +128,6 @@
   .suggestions {
     /* Styles spécifiques pour max-width: 576px */
     position: absolute;
-    top: 10%;
+    top: 35%;
   }
 }
