@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
 import CityContainer from "../CityContainer/CityContainer";
 import SearchBar from "../SearchBar/SearchBar";
 
@@ -18,7 +17,8 @@ function Grid() {
   const [cityPhoto, setCityPhoto] = useState(null);
   const [showCityContainer, setShowCityContainer] = useState(false);
 
-  const handleButtonClick = () => {
+  const handleButtonClick = (event) => {
+    event.stopPropagation(); // Empêche la propagation du clic
     setShowSidebar(!showSidebar);
   };
 
@@ -36,16 +36,32 @@ function Grid() {
     setShowCityContainer(true);
   };
 
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (event.target.closest(".sidebar-container") === null) {
+        setShowSidebar(false);
+      }
+    };
+
+    document.addEventListener("click", handleOutsideClick);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
+
   return (
     <div className="grid">
-      {showSidebar && <Sidebar onClose={handleButtonClick} />}
+      {showSidebar && <Sidebar onClose={handleButtonClick} showSidebar={showSidebar} />}
       <div className="top-row">
         <Logo />
         <Title />
         <div className="sidebar-container">
-          <button className="circular ui icon button" onClick={handleButtonClick}>
-            <i className="icon info"></i>
-          </button>
+          {!showSidebar && (
+            <i
+              className="icon info circle"
+              onClick={handleButtonClick}
+            ></i>
+          )}
         </div>
       </div>
       <div className="middle-row">
