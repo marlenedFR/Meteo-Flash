@@ -45,7 +45,7 @@
 .suggestions {
   position: absolute;
   z-index: 3;
-  top: 30%;
+  top: 40%;
   left: 0;
   right: 0;
   overflow-y: auto;
@@ -86,7 +86,7 @@
   .suggestions {
     /* Styles spécifiques pour max-width: 1200px */
     position: absolute;
-    top: 35%;
+    top: 40%;
   }
 }
 
@@ -100,7 +100,7 @@
   .suggestions {
     /* Styles spécifiques pour max-width: 992px */
     position: absolute;
-    top: 35%;
+    top: 40%;
   }
 }
 
@@ -114,7 +114,7 @@
   .suggestions {
     /* Styles spécifiques pour max-width: 768px */
     position: absolute;
-    top: 35%;
+    top: 40%;
   }
 }
 
@@ -128,6 +128,6 @@
   .suggestions {
     /* Styles spécifiques pour max-width: 576px */
     position: absolute;
-    top: 35%;
+    top: 40%;
   }
 }

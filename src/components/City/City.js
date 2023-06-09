@@ -5,13 +5,10 @@ function City({ cityPhoto }) {
 
   return (
     <div className="city-container">
-      {cityPhoto ? (
+      {cityPhoto && (
         <div className="city-image">
-          <img src={cityPhoto.imageUrl} alt="City" />
-          <p>Photographer: {cityPhoto.photographer}</p>
+          <img src={cityPhoto.imageUrl} alt="City" title={`Photographe: ${cityPhoto.photographer}`} />
         </div>
-      ) : (
-        {/* <p>Aucune photo trouvée</p> */}
       )}
     </div>
   );
