@@ -51,9 +51,9 @@ function Grid() {
 
   return (
     <div className="grid">
-      {showSidebar && <Sidebar onClose={handleButtonClick} showSidebar={showSidebar} />}
+      {showSidebar && <Sidebar weatherIcon={cities.length > 0 ? cities[0].weatherIcon : null} onClose={handleButtonClick} showSidebar={showSidebar} />}
       <div className="top-row">
-        <Logo />
+        <Logo weatherIcon={cities.length > 0 ? cities[0].weatherIcon : null} />
         <Title />
         {!showSidebar && (
           <i

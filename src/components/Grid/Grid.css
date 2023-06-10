@@ -35,6 +35,11 @@
   transform: translateX(-50%);
 }
 
+.weather-icon {
+  width: 70%;
+  height: auto;
+}
+
 .icon.info {
   position: absolute;
   font-size: 1.3em;
