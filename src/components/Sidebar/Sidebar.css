@@ -1,19 +1,20 @@
   /* The sidebar menu */
+.sidebar-container {
+  width: 97%; /* 0 width - change this with JavaScript */
+  max-height: 10%;
+  z-index: 1; /* Stay on top */
+ 
+}
+
 .sidebar {
     display: flex;
     flex-direction: column;
     justify-content: center; 
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-bottom: 1em;
-    width: 97%; /* 0 width - change this with JavaScript */
-    height: 81.5%;
-    position: absolute; /* Stay in place */
-    z-index: 3; /* Stay on top */
+    padding: 1em;
+    position: relative; /* Stay in place */
     top: 4em;
     background-color: #404379;
     overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.25s; /* 0.5 second transition effect to slide in the sidebar */
     border-radius: 4px;
     border: solid 1px #dd88dd;
     opacity: 0.98;
@@ -35,7 +36,6 @@
 
   .sidebar h3 {
     color: #ffffff;
-    padding-top: 5%;
   }
 
   .close.icon {
