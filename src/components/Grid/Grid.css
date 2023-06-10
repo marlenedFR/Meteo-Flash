@@ -35,15 +35,11 @@
   transform: translateX(-50%);
 }
 
-.sidebar-container {
-  margin-bottom: 2em;  
-}
-
 .icon.info {
   position: absolute;
   font-size: 1.3em;
   top: 0.5em;
-  left: 94%;
+  right: 0.5em;
   color: #404379;
   cursor: pointer;
 }
@@ -113,9 +109,6 @@
     /* Ajouter des marges autour de l'application */
     margin: 2em;
   }
-  .icon.info {
-    left: 91%;
-  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -138,6 +131,11 @@
     /* Styles spécifiques pour min-width: 768px */
     padding: 2%;
     left: 40%;
+  }
+
+  .icon.info {
+    top: 0.5em;
+    right: 0.3em;
   }
 }
 
@@ -170,6 +168,19 @@
   }
 }
 
+
+@media (max-width: 576px) {
+  .icon.info {
+    right: 0.3em; /* Ajuster la position de l'icône sur les petits appareils */
+  }
+}
+
+@media (min-width: 1200px) {
+  .icon.info {
+    top: 1em;
+    right: 0.3em; /* Ajuster la position de l'icône sur les grands appareils */
+  }
+}
 
 
 

@@ -38,7 +38,7 @@ function Grid() {
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      if (event.target.closest(".sidebar-container") === null) {
+      if (event.target.closest(".sidebar") === null) {
         setShowSidebar(false);
       }
     };
@@ -55,14 +55,12 @@ function Grid() {
       <div className="top-row">
         <Logo />
         <Title />
-        <div className="sidebar-container">
-          {!showSidebar && (
-            <i
-              className="icon info circle"
-              onClick={handleButtonClick}
-            ></i>
-          )}
-        </div>
+        {!showSidebar && (
+          <i
+            className="icon info circle"
+            onClick={handleButtonClick}
+          ></i>
+        )}
       </div>
       <div className="middle-row">
         <SearchBar onSearch={handleSearch} />

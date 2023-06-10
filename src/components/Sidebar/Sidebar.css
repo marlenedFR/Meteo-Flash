@@ -1,10 +1,13 @@
   /* The sidebar menu */
-.sidebar {
+.sidebar.open {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
     padding-left: 1em;
     padding-right: 1em;
     padding-bottom: 1em;
-    width: 95%; /* 0 width - change this with JavaScript */
-    height: 85%;
+    width: 98%; /* 0 width - change this with JavaScript */
+    height: 84%;
     position: absolute; /* Stay in place */
     z-index: 3; /* Stay on top */
     top: 4em;
@@ -48,11 +51,7 @@
     color: #dd88dd;
   }
 
-  @media (min-width: 280px) {
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-  }
-  
+
+
+
+
