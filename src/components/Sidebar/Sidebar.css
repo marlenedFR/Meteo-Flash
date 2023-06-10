@@ -1,5 +1,5 @@
   /* The sidebar menu */
-.sidebar.open {
+.sidebar {
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -35,6 +35,7 @@
 
   .sidebar h3 {
     color: #ffffff;
+    margin-top: 7em;
   }
 
   .close.icon {
