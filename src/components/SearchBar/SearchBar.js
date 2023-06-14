@@ -11,16 +11,14 @@ import { fetchCities, fetchCityByCoordinates } from "../../api/weatherbit";
 function SearchBar({ onSearch }) {
   const suggestionsRef = useRef(null);
   const [searchText, setSearchText] = useState("");
+  const [scrollToTop, setScrollToTop] = useState(false);
   const [citySuggestions, setCitySuggestions] = useState([]);  
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
-
-  const [scrollToTop, setScrollToTop] = useState(false);
-
 
   useEffect(() => { // Use the useEffect hook to add event listeners when the component is mounted
     if (scrollToTop) {
       window.scrollTo({ top: 0, behavior: "smooth" });
-      setScrollToTop(false); // Réinitialisez l'état pour les futurs défilements
+      setScrollToTop(false); // Reset status for future scrolling
     }
     const handleEscapeKey = (e) => {
       if (e.key === "Escape") {
@@ -33,7 +31,7 @@ function SearchBar({ onSearch }) {
       document.removeEventListener("keydown", handleEscapeKey);
       document.removeEventListener("click", handleOutsideClick);
     };
-  }, [scrollToTop]); // Empty dependency array means this effect runs once on mount and clean up on unmount
+  }, [scrollToTop]);
 
   //**** Searchfield ****//
   const handleInputChange = async (e) => {  // This function is called whenever the user types into the search field
