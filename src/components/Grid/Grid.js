@@ -47,7 +47,6 @@ function Grid() {
       setCityPhoto(null); // If no filtered cities, reset the photo state
     }
     setShowCityContainer(true); // Make the city container visible after a search operation
-    window.scrollTo({ top: 0, behavior: "smooth" }); // Faites défiler la vue vers le haut après la recherche    
   };
 
   return (
