@@ -13,7 +13,7 @@ function Sidebar({ onClose, showSidebar, weatherIcon }) {
         <p>Meteo Flash s&#39;appuie sur des bases de données gratuites, par conséquent, les recherches sont limitées et les résultats peuvent ne pas refléter la réalité.</p>
         <p>Les suggestions de recherche privilégient les villes les plus populaires ayant une densité de population d&#39;au moins 15 000 habitants.</p>
         <p>Les images affichées sont sélectionnées en fonction de leur pertinence générale et peuvent ne pas correspondre exactement à la ville recherchée.</p>
-        <p>En raison de la limitation du nombre de requêtes que nous pouvons faire aux sources de données gratuites, le site peut parfois ne pas fonctionner comme prévu. Si vous rencontrez des problèmes, nous vous invitons à réessayer ultérieurement.</p>
+        <p>En raison de la limitation du nombre de requêtes que nous pouvons faire aux sources de données gratuites, le site peut parfois ne pas fonctionner comme prévu. Si vous rencontrez des problèmes, je vous invite à réessayer ultérieurement.</p>
         <p>Merci de votre compréhension.</p>
       </div>
     </div>

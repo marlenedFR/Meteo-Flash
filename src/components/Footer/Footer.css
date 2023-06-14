@@ -4,7 +4,6 @@
     margin-bottom: 10%;
     font-size: 0.78em;
     color: #404379;
-    /* font-weight: bold; */
 }
 
 .footer-container p .icon {
@@ -22,28 +21,28 @@
 
 .footer-container .heart.icon {
     font-size: 1em;
-    transition: transform 0.3s, color 0.3s;
+    transition: transform 0.3s, color 0.3s; /* Adds a transition effect to transform and color properties with a duration of 0.3s */
   }
   
   .footer-container .heart.icon:hover {
-    animation-name: heartbeat;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    color: red;
+    animation-name: heartbeat; /* Applies the heartbeat animation on hover */
+    animation-duration: 1s; /* Sets the duration of the heartbeat animation to 1s */
+    animation-timing-function: ease-in-out; /* Sets the timing function of the heartbeat animation to ease-in-out */
+    animation-iteration-count: infinite; /* Sets the heartbeat animation to repeat indefinitely */
+    color: red; /* Sets the color of the heart icon on hover to red */
   }
   
   @keyframes heartbeat {
     0% {
-      transform: scale(1);
+      transform: scale(1); /* Initial scale of 1 */
     }
     50% {
-      transform: scale(1);
-      color: pink;
-      z-index: 1;
+      transform: scale(1); /* Scale remains 1 at 50% */
+      color: pink; /* Sets the color of the heart icon at 50% to pink */
+      z-index: 1; /* Sets the z-index of the heart icon at 50% to 1 */
     }
     100% {
-      transform: scale(1);
+      transform: scale(1); /* Scale remains 1 at 100% */
     }
   }
   

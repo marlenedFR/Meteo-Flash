@@ -46,6 +46,7 @@ export const fetchCityName = async (searchText) => {
     const fileContent = await response.text();
 
     const citiesData = convertTextToData(fileContent, searchText);
+    
 
     return citiesData;
   } catch (error) {

@@ -49,6 +49,10 @@
   cursor: pointer;
 }
 
+.icon.info:hover {
+  color: #6B426B;
+}
+
 .title-container {
   margin-top: 1em;
   margin-bottom: -1em;
@@ -94,7 +98,7 @@
   padding: 3%;
   position: absolute;
   z-index: 2;
-  top: 27%;
+  top: 29%;
   left: 40.5%;
   transform: translate(-50%, -50%);
   width: 70%; 
@@ -108,11 +112,46 @@
   box-shadow: 0px 8px 16px 0px #00000033;
 }
 
+
+
+/* .extra-data-container.show {
+  position: absolute;
+  z-index: 3;
+  padding: 3%;
+  top: 105%;
+  left: 0%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #1b016493;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px 0px #00000033;
+
+} */
+
 /* Small devices (landscape phones, 375px and up) */
 @media (min-width: 280px) {
   .grid {
     /* Ajouter des marges autour de l'application */
     margin: 2em;
+  }
+
+  .weather-city-container {
+    top: 33%;
+    left: 45%;
+    width: 80%;
+  }
+}
+
+@media (min-width: 320px) {
+  .grid {
+    /* Ajouter des marges autour de l'application */
+    margin: 2em;
+  }
+
+  .weather-city-container {
+    top: 33%;
+    left: 48%;
+    width: 85%;
   }
 }
 
@@ -135,7 +174,7 @@
   .weather-city-container {
     /* Styles spécifiques pour min-width: 768px */
     padding: 2%;
-    left: 40%;
+    left: 42%;
   }
 
   .icon.info {
@@ -180,9 +219,17 @@
   }
 }
 
+
 @media (min-width: 1200px) {
   .icon.info {
-    top: 1em;
+    top: 0.5em;
+    right: 0.3em; /* Ajuster la position de l'icône sur les grands appareils */
+  }
+}
+
+@media (min-width: 1440px) {
+  .icon.info {
+    top: 0.5em;
     right: 0.3em; /* Ajuster la position de l'icône sur les grands appareils */
   }
 }

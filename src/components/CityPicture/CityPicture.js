@@ -1,7 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function City({ cityPhoto }) {
+/**
+ * The CityPicture component displays a city photo and its associated photographer.
+ *
+ * @param {Object} cityPhoto - An object containing information about the city photo.
+ * @returns {JSX.Element} The rendered CityPicture component.
+ */
+function CityPicture({ cityPhoto }) {
 
   return (
     <div className="city-container">
@@ -14,11 +20,11 @@ function City({ cityPhoto }) {
   );
 }
 
-City.propTypes = {
+CityPicture.propTypes = {
   cityPhoto: PropTypes.shape({
     imageUrl: PropTypes.string.isRequired,
     photographer: PropTypes.string.isRequired,
   }),
 };
 
-export default City;
+export default CityPicture;

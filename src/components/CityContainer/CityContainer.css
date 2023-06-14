@@ -1,11 +1,10 @@
 .no-photo-found {
-    margin-top: 7em;
-    min-height: 18.57em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    margin-top: 6.5em;
+    min-height: 18.57em;
   }
   
   .comment {
@@ -14,7 +13,44 @@
     font-size: 1em;
   }
 
-  .oups {
+  .oups-image {
     width: 15%;
     margin: 1em;
   }
+
+  /* Media Queries */
+@media screen and (max-width: 768px) {
+  .no-photo-found {
+    margin-top: 5em;
+    min-height: 14em;
+  }
+
+  .comment {
+    margin-top: -0.5em;
+    font-size: 0.8em;
+  }
+
+  .oups-image {
+    padding-top: 2em;
+    width: 15%;
+    margin: 0.5em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .no-photo-found {
+    margin-top: 3em;
+    min-height: 10em;
+  }
+
+  .comment {
+    margin-top: -0.3em;
+    font-size: 0.7em;
+  }
+
+  .oups-image {
+    padding-top: 7em;
+    width: 20%;
+    margin: 0.3em;
+  }
+}
