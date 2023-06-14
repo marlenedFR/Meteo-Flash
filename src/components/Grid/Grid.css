@@ -112,26 +112,8 @@
   box-shadow: 0px 8px 16px 0px #00000033;
 }
 
-
-
-/* .extra-data-container.show {
-  position: absolute;
-  z-index: 3;
-  padding: 3%;
-  top: 105%;
-  left: 0%;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #1b016493;
-  border-radius: 8px;
-  box-shadow: 0px 8px 16px 0px #00000033;
-
-} */
-
-/* Small devices (landscape phones, 375px and up) */
 @media (min-width: 280px) {
   .grid {
-    /* Ajouter des marges autour de l'application */
     margin: 2em;
   }
 
@@ -144,7 +126,6 @@
 
 @media (min-width: 320px) {
   .grid {
-    /* Ajouter des marges autour de l'application */
     margin: 2em;
   }
 
@@ -155,24 +136,19 @@
   }
 }
 
-/* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   .grid {
-    /* Styles spécifiques pour min-width: 576px */
     max-width: 30em;
     width: 80%;
   }
 }
 
-/* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .grid {
-    /* Styles spécifiques pour min-width: 768px */
     max-width: 36em;
     width: 70%;
   }
   .weather-city-container {
-    /* Styles spécifiques pour min-width: 768px */
     padding: 2%;
     left: 42%;
   }
@@ -183,54 +159,45 @@
   }
 }
 
-/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .grid {
-    /* Styles spécifiques pour min-width: 992px */
     max-width: 42em;
     width: 60%;
   }
   .weather-city-container {
-    /* Styles spécifiques pour min-width: 768px */
     padding: 2%;
     left: 38%;
   }
-  
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .grid {
-    /* Styles spécifiques pour min-width: 1200px */
     max-width: 48em;
     width: 50%;
   }
   .weather-city-container {
-    /* Styles spécifiques pour min-width: 768px */
     padding: 2%;
     left: 33%;
   }
 }
 
-
 @media (max-width: 576px) {
   .icon.info {
-    right: 0.3em; /* Ajuster la position de l'icône sur les petits appareils */
+    right: 0.3em; 
   }
 }
-
 
 @media (min-width: 1200px) {
   .icon.info {
     top: 0.5em;
-    right: 0.3em; /* Ajuster la position de l'icône sur les grands appareils */
+    right: 0.3em;
   }
 }
 
 @media (min-width: 1440px) {
   .icon.info {
     top: 0.5em;
-    right: 0.3em; /* Ajuster la position de l'icône sur les grands appareils */
+    right: 0.3em;
   }
 }
 

@@ -78,13 +78,11 @@
 
 @media (max-width: 1200px) {
   .form-wrapper {
-    /* Styles spécifiques pour max-width: 1200px */
     margin-top: 2em;
     padding: 1em;
   }
 
   .suggestions {
-    /* Styles spécifiques pour max-width: 1200px */
     position: absolute;
     top: 40%;
   }
@@ -92,13 +90,11 @@
 
 @media (max-width: 992px) {
   .form-wrapper {
-    /* Styles spécifiques pour max-width: 992px */
     margin-top: 1.5em;
     padding: 0.5em;
   }
 
   .suggestions {
-    /* Styles spécifiques pour max-width: 992px */
     position: absolute;
     top: 40%;
   }
@@ -106,13 +102,11 @@
 
 @media (max-width: 768px) {
   .form-wrapper {
-    /* Styles spécifiques pour max-width: 768px */
     margin-top: 1em;
     padding: 0.25em;
   }
 
   .suggestions {
-    /* Styles spécifiques pour max-width: 768px */
     position: absolute;
     top: 40%;
   }
@@ -120,13 +114,11 @@
 
 @media (max-width: 576px) {
   .form-wrapper {
-    /* Styles spécifiques pour max-width: 576px */
     margin-top: 0.5em;
     padding: 0.25em;
   }
 
   .suggestions {
-    /* Styles spécifiques pour max-width: 576px */
     position: absolute;
     top: 40%;
   }

@@ -1,12 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/**
- * The CityPicture component displays a city photo and its associated photographer.
- *
- * @param {Object} cityPhoto - An object containing information about the city photo.
- * @returns {JSX.Element} The rendered CityPicture component.
- */
 function CityPicture({ cityPhoto }) {
 
   return (

@@ -1,10 +1,9 @@
 import React from "react";
-import "./Sidebar.css";
 import PropTypes from "prop-types";
 
+import "./Sidebar.css";
+
 function Sidebar({ onClose, showSidebar, weatherIcon }) {
-
-
   return (
     <div className="sidebar-container" style={{ marginTop: weatherIcon ? "2em" : "0" }}>
       <div className={`sidebar ${showSidebar ? "open" : ""}`}>
@@ -17,19 +16,13 @@ function Sidebar({ onClose, showSidebar, weatherIcon }) {
         <p>Merci de votre compréhension.</p>
       </div>
     </div>
-
-  );
-  
+  );  
 }
 
 Sidebar.propTypes = {
   onClose: PropTypes.func.isRequired,
   showSidebar: PropTypes.bool.isRequired,
   weatherIcon: PropTypes.string,
-
 };
-  
-
-
 
 export default Sidebar;

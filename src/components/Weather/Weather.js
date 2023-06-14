@@ -1,11 +1,12 @@
 import React from "react";
-import "./Weather.css";
+
 import PropTypes from "prop-types";
 
-function Weather({ cities }) {
-  // const [showExtraData, setShowExtraData] = useState(false);
+import "./Weather.css";
 
-  function getPrecipitationsMessage(precipitations) {
+function Weather({ cities }) {
+
+  function getPrecipitationsMessage(precipitations) {  // Define a function that returns a precipitation message based on the precipitation value. If precipitation is more than 0, it's raining. If not, it's not raining.
     if (precipitations > 0) {
       return (
         <>
@@ -20,33 +21,19 @@ function Weather({ cities }) {
       );
     }
   }
-
   return (
     <div className="weather-container">
       {cities.map((city, index) => (
         <div key={index}>
-
           <h3>Ville : {city.name}</h3>
-
           <p>Température : {city.temperature} °</p>
-
           <p>
             {city.precipitations !== undefined ? (
               getPrecipitationsMessage(city.precipitations)
             ) : (
               "Pas d'informations sur la pluie disponibles"
             )}
-            {/* <i className="plus icon" onClick={() => setShowExtraData(!showExtraData)}></i> */}
-            {/* <button onClick={() => setShowExtraData(!showExtraData)}> */}
-            {/* {showExtraData ? "" : ""}
-          
-          {showExtraData && (
-            <div className={`extra-data-container ${showExtraData ? "show" : ""}`}>
-              <h4>Informations supplémentaires pour {city.name}</h4>              
-            </div> */}
           </p>
-
-
         </div>
       ))}
     </div>
