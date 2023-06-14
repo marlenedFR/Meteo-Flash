@@ -14,7 +14,14 @@ function SearchBar({ onSearch }) {
   const [citySuggestions, setCitySuggestions] = useState([]);  
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
 
+  const [scrollToTop, setScrollToTop] = useState(false);
+
+
   useEffect(() => { // Use the useEffect hook to add event listeners when the component is mounted
+    if (scrollToTop) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setScrollToTop(false); // Réinitialisez l'état pour les futurs défilements
+    }
     const handleEscapeKey = (e) => {
       if (e.key === "Escape") {
         setCitySuggestions([]); // If the escape key is pressed, clear the city suggestions list
@@ -26,7 +33,7 @@ function SearchBar({ onSearch }) {
       document.removeEventListener("keydown", handleEscapeKey);
       document.removeEventListener("click", handleOutsideClick);
     };
-  }, []); // Empty dependency array means this effect runs once on mount and clean up on unmount
+  }, [scrollToTop]); // Empty dependency array means this effect runs once on mount and clean up on unmount
 
   //**** Searchfield ****//
   const handleInputChange = async (e) => {  // This function is called whenever the user types into the search field
@@ -49,6 +56,7 @@ function SearchBar({ onSearch }) {
     const photoResults = await fetchCityPhoto(city.name); // Fetch city data and photos from API (unsplash)
     onSearch([city], cityResults, photoResults); // Execute the onSearch function passed as prop with the selected city data and photo
     setCitySuggestions([]); // Clear city suggestions
+    setScrollToTop(true); // Scroll to top of the page
   };
   const handleFormSubmit = (e) => { // This function is triggered when the form is submitted
     e.preventDefault();
@@ -127,8 +135,6 @@ function SearchBar({ onSearch }) {
     const cityResults = await fetchCityByCoordinates(latitude, longitude);  // Fetch the city and the city photo corresponding to the current position
     const photoResults = await fetchCityPhoto(cityResults[0].name);
     onSearch(cityResults, cityResults, photoResults); // Execute the onSearch function passed as prop with the current city and photo
-    window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to the top of the page
-
   };
   const errorCallback = (error) => { // This function is called if the Geolocation API fails to retrieve the current position
     console.log("Une erreur s'est produite lors de la récupération de la position :", error);
