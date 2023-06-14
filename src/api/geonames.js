@@ -34,7 +34,7 @@ const convertTextToData = (text, searchText) => { // Function to convert text da
 
 export const fetchCityName = async (searchText) => { // Function to fetch city data from a text file and perform a search
   try {
-    const response = await fetch("/data.txt");  // Fetch the city data text file
+    const response = await fetch(process.env.REACT_APP_DATA_FILE);  // Fetch the city data text file
 
     if (!response.ok) {  // If the fetch is not successful, throw an error
       throw new Error(
