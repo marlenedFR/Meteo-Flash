@@ -65,4 +65,3 @@ d.marlene@gmail.com
 ## Bugs
 
 - Le responsive a été checké sur la plupart des résolutions, cependant, n'hésitez pas à me contacter si vous voyez la moindre anomalie.
-- Le bouton de géolocation ne semble pas fonctionner sous Safari.
