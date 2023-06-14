@@ -127,8 +127,6 @@ function SearchBar({ onSearch }) {
     const cityResults = await fetchCityByCoordinates(latitude, longitude);  // Fetch the city and the city photo corresponding to the current position
     const photoResults = await fetchCityPhoto(cityResults[0].name);
     onSearch(cityResults, cityResults, photoResults); // Execute the onSearch function passed as prop with the current city and photo
-    window.scrollTo({ top: 0, behavior: "smooth" }); // Faites défiler la vue vers le haut après la recherche
-
   };
   const errorCallback = (error) => { // This function is called if the Geolocation API fails to retrieve the current position
     console.log("Une erreur s'est produite lors de la récupération de la position :", error);
