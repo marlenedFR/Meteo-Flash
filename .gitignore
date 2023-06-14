@@ -13,7 +13,7 @@
 
 # misc
 .DS_Store
-.prez_video
+/prez_video
 .env
 .env.local
 .env.development.local
