@@ -44,7 +44,7 @@ Une fois la ville sélectionnée, deux requêtes sont envoyées :
 - une vers [Weatherbit](https://www.weatherbit.io/) qui récupère la température, les précipitations et l'icone qui remplace le logo,  
 - l'autre vers [Unsplash](https://unsplash.com/) qui récupère les 10 premières photos les plus pertinentes par rapport au nom de la ville et en affiche une de façon aléatoire.
 
-Ces APIs sont gratuites et par conséquent, ne retournent pas forcément toutes les données dont j'avais besoin.  
+Ces APIs sont gratuites et par conséquent, ne retournent pas forcément exactement les données dont j'avais besoin.  
 
 Il a fallu ruser pour obtenir un résultat le plus cohérent possible entre les données que je peux récupérer et celles qui s'affichent.
 
