@@ -1,6 +1,6 @@
 .sidebar-container {
-  width: 97%; /* 0 width - change this with JavaScript */
-  z-index: 1; /* Stay on top */
+  width: 97%;
+  z-index: 1;
  }
 
 .sidebar {
@@ -8,10 +8,10 @@
     flex-direction: column;
     justify-content: center; 
     padding: 1em;
-    position: relative; /* Stay in place */
+    position: relative; 
     top: 4em;
     background-color: #404379;
-    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-x: hidden; 
     border-radius: 4px;
     border: solid 1px #dd88dd;
     opacity: 0.98;
