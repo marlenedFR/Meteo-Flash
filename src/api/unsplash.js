@@ -22,7 +22,7 @@ export const fetchCityPhoto = async (searchText) => { // Fetches a random photo 
       photographer: photo.user.name,
     };
   } catch (error) {
-    console.log("Une erreur s'est produite lors de la recherche de la photo :", error);
+    // console.log("Une erreur s'est produite lors de la recherche de la photo :", error);
     return null;
   }
 };

@@ -14,7 +14,7 @@ const fetchWeatherData = async (url) => {
     }
     return data.data;
   } catch (error) {
-    console.log("Une erreur s'est produite lors de la recherche :", error);
+    // console.log("Une erreur s'est produite lors de la recherche :", error);
     return [];
   }
 };

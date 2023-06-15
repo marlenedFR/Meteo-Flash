@@ -46,7 +46,7 @@ export const fetchCityName = async (searchText) => { // Function to fetch city d
 
     return citiesData;
   } catch (error) {
-    console.log("Une erreur s'est produite lors de la recherche :", error);
+    // console.log("Une erreur s'est produite lors de la recherche :", error);
     return [];
   }
 };

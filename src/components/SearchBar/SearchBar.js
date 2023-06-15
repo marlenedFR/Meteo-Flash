@@ -123,7 +123,7 @@ function SearchBar({ onSearch }) {
         errorCallback
       );
     } else {
-      console.log("La géolocalisation n'est pas prise en charge par votre navigateur.");
+      // console.log("La géolocalisation n'est pas prise en charge par votre navigateur.");
     }
   };
   const successCallback = async (position) => { // This function is called if the Geolocation API successfully retrieves the current position
@@ -134,8 +134,8 @@ function SearchBar({ onSearch }) {
     const photoResults = await fetchCityPhoto(cityResults[0].name);
     onSearch(cityResults, cityResults, photoResults); // Execute the onSearch function passed as prop with the current city and photo
   };
-  const errorCallback = (error) => { // This function is called if the Geolocation API fails to retrieve the current position
-    console.log("Une erreur s'est produite lors de la récupération de la position :", error);
+  const errorCallback = () => { // This function is called if the Geolocation API fails to retrieve the current position
+    // console.log("Une erreur s'est produite lors de la récupération de la position :", error);
   };  
 
   return (
