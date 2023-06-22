@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import { fetchCities } from "../../api/weatherbit";
+// import { fetchCities } from "../../api/weatherbit";
+import { fetchCities } from "../../api/openweathermap";
 import { fetchCityPhoto } from "../../api/unsplash";
 
 import "./Grid.css";

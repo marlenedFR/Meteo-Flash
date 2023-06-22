@@ -6,7 +6,9 @@ import { Icon } from "semantic-ui-react";
 
 import { fetchCityName } from "../../api/geonames";
 import { fetchCityPhoto } from "../../api/unsplash";
-import { fetchCities, fetchCityByCoordinates } from "../../api/weatherbit";
+// import { fetchCities, fetchCityByCoordinates } from "../../api/weatherbit";
+import { fetchCities, fetchCityByCoordinates } from "../../api/openweathermap";
+
 
 function SearchBar({ onSearch }) {
   const suggestionsRef = useRef(null);

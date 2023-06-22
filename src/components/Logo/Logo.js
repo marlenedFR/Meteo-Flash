@@ -9,7 +9,7 @@ function Logo({ weatherIcon }) { // Receives `weatherIcon` as a prop, which will
       { // If `weatherIcon` prop is present, use it as a part of the URL to display a weather icon
         // Else, display the logo from the assets
         weatherIcon ? (
-          <img className="weather-icon" src={`https://www.weatherbit.io/static/img/icons/${weatherIcon}.png`} alt="Weather Icon" />
+          <img className="weather-icon" src={`https://openweathermap.org/img/wn/${weatherIcon}.png`} alt="Weather Icon" />
         ) : (
           <img className="logo-image" src={logo} alt="Logo Meteo Flash" />
         )}
