@@ -41,7 +41,7 @@ La recherche de la ville se fait via la barre de recherche ou en utilisant la g�
 Pour les suggestions, j'utilise un fichier texte (transformé au format json dans l'app) fourni par le site [Geonames](https://www.geonames.org/). Ce fichier contient toutes les villes dans le monde de plus de 15000 habitants.
 
 Une fois la ville sélectionnée, deux requêtes sont envoyées :  
-- une vers [Weatherbit](https://www.weatherbit.io/) (ou [Openweathermap](https://openweathermap.org/) qui récupère la température, les précipitations et l'icone qui remplace le logo,  
+- une vers [Weatherbit](https://www.weatherbit.io/) (ou [Openweathermap](https://openweathermap.org/)) qui récupère la température, les précipitations et l'icone qui remplace le logo,  
 - l'autre vers [Unsplash](https://unsplash.com/) qui récupère les 10 premières photos les plus pertinentes par rapport au nom de la ville et en affiche une de façon aléatoire.
 
 Ces APIs sont gratuites et par conséquent, ne retournent pas exactement les données dont j'avais besoin.  
