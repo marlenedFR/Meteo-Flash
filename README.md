@@ -56,7 +56,6 @@ N'hésitez pas à m'envoyer vos idées pour améliorer l'application, mon code, 
 
 [LinkedIn](https://www.linkedin.com/in/marlenedfr/)  
 d.marlene@gmail.com  
-+33615756465
 
 ## Changelog
 
